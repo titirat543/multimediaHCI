@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="sidebar.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<title>Tutorial N5</title>
+
+<script src="jquery.js"></script>
+<script>
+function clickBtn( btn )
+{
+  var bname = "#scene" + btn;
+  $("[id^='scene']").hide();
+  $(bname).show();
+  
+  $("a.link").click(function(){
+    $("a.link").css("background-color", "grey"); /* Return the same colour when we click another tab */
+    
+    $(this).css("background-color", "orange");/*tab colour will change when we click sidebar*/
+  });
+ 
+  
+  
+}
+
+$(document).ready(function(){
+  clickBtn('0');
+});
+</script>
+
+
+</head>
+
+<body>
+  <!-- Navigation bar -->
+    <header>
+  
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        
+          <a class="nav-link disabled">Logic Gate</a> 
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="Homepage.html">Home </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="tutorial.html">Tutorial <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="Exercise.html">Exercise&Solution</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Simulator.html">Simulator</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Help.html">Contact Us</a>
+              </li>
+            </ul>
+            
+          </div>
+        </nav>
+      </header>
+      <!-- Sidebar -->
+  <div class="sidenav">
+  <a class = "active" href="#about" onclick="clickBtn('0')">Introduction</a>
+  <a href="#binary" onclick="clickBtn('1')" class="link">Binary Digits</a>
+  <a class = "active" href="#LG">Logic gate</a>
+  <a href="#andgate" onclick="clickBtn('2')" class="link">And gate</a>
+  <a href="#notgate" onclick="clickBtn('4')" class="link">not gate</a>
+  <a href="#orgate"  onclick="clickBtn('3')" class="link">Or gate</a>
+  
+  <a href="#norgate" onclick="clickBtn('5')" class="link">Nor gate</a>
+  <a href="#xorgate" onclick="clickBtn('6')" class="link">Xor gate</a>
+  <a href="#xnorgate" onclick="clickBtn('7')" class="link">Xnor gate</a>
+  <a href="#nandgate" onclick="clickBtn('8')" class="link">Nand gate</a>
+  <a class = "active" href="#BA" >Boolean Algebra</a>
+  <a href="#LOD" onclick="clickBtn('9')"  class="link">Laws & Rules of Boolean Algebra</a>
+  
+  <a href="#dMt" onclick="clickBtn('10')"  class="link">de Morgan’s Theorem</a>
+  <a class = "active" href="#BA">Boolean Expresstion/ Karnaugh Maps</a>
+  <a href="#Sp" onclick="clickBtn('11')"  class="link">SOP and POS form</a>
+  <a href="#BA" onclick="clickBtn('12')"  class="link">Two-Variable Map</a>
+  <a href="#TB" onclick="clickBtn('13')"  class="link">Three-Variable Map</a>
+  </div>
+
+  <!-- Intro screen (scene0) -->
+    <div id="scene0" class="main">
+    <h1  style="text-align: center"><u>Introduction</u></h1>
+    <p class="medium" style="text-align: center">
+    Feel free to learn and understand topic you look at.We have show suggestion about the level of  how difficult topics you learn.
+    </p>
+    <h2  style="text-align: center;"><u>Level of topics</u></h2>
+    <p><mark class="grey">Grey</mark> colour is suitable for Beginner Learnner.</p>
+    
+    <p><mark class="blue">Blue</mark> colour is suitable for Intermidiate Learnner.</p>
+
+    <p><mark class="red">Red</mark> colour is suitable for Upper-Intermidiate Learnner.</p>
+
+    <table style="width:100%">
+        <colgroup>
+          <col class="grey" />
+          <col class="blue" />
+          <col class="red"  />
+         
+        </colgroup>
+      <tr>
+    <th class="grey">Beginning</th>
+    <th class="blue">Intermidiate</th> 
+    <th class="red" >Upper Intermidiate</th>
+    </tr>
+    <tr>
+    <td class="grey" onclick="clickBtn('1')">Binary</td>
+    <td class="blue" onclick="clickBtn('9')" >Boolean Algebra</td>
+    <td class="red" onclick="clickBtn('11')">Boolean Expresstion with Karnaugh Maps</td>
+    </tr>
+    <tr>
+      <td class="grey" onclick="clickBtn('2')">Logic gate</td>
+      <td class="blue"></td>
+      <td class="red"></td>
+    
+    
+    </tr>
+   </table>
+    
+  </div>
+  <!-- Intro screen (scene1) -->
+  <div id="scene1" class="main">
+      <h1  style="text-align: left"><u>Binary digits</u></h1>
+      <p class="medium" style="text-align: left">
+      Before you start,Make sure that you know how to convert the number in base 10 such as  0,1,2,3,4,5,6,7,8,9 (not 10)
+      to number base 2 (0,1).
+      </p>
+      
+      <hr>
+      
+      <h2  style="text-align: left;"><u>Convert from decimal to binary</u></h2>
+      <p><img src="Picture/decimal.png" alt="Smiley face" style="text-align: left"> 
+      </p>
+      <p class="medium" style="text-align: left">
+          You have to make divide by 2 with your number(base 10). 
+      </p>
+      <p class="medium" style="text-align: left">
+         for example in this picture,we have to remember that we use the <mark class="grey">last remainder
+            for the first binary digit</mark> and follow the previous remainders.
+      </p>
+      
+      <br>
+      <br>
+      <p>
+      Credit picture: GeeksforGeeks website.
+      </p>
+      <hr>
+      
+      <h3  style="text-align: left;"><u>Convert from Binary to decimal</u></h3>
+      <p class="medium" style="text-align: left">
+          You have to use math formular in the below picture. 
+      </p>
+      <p class="medium" style="text-align: left">
+         <mark class="grey">Decimal to Binary formular</mark> 
+      </p>
+      <p><img src="Picture/binary.png" alt="Binary" style="text-align: left"></p>
+    
+    <br>
+    <p>So you have 10001 (Example above) in Binary.You have to use formular. Start from <mark class="grey">the last binary digit. </mark></p>
+    <p>= (1x2^0)+(0x2^1)+(0x2^2)+(0x2^3)+(1x2^4)</p>
+      
+   <p>
+       = 16 + 1 -> 17.
+    </p>
+    
+    </div>
+  
+    
+    <!-- Intro screen (scene2) -->
+    <div id="scene2" class="main">
+
+        <h1  style="text-align: left"><u>AND gate</u></h1>
+      
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Concept. </h2>
+            <p class="lead">Just remember,<mark class="grey">Both A and B should have electric</mark>,then the output will be work.Or if we have more than 2 output,<mark class="grey">All input should have electric inside too.</mark></p>
+            <h3 class="featurette-heading">Notice.</h3>
+            <p class="lead">In this picture,And gate has D shape which is same D in AN<u>D</u></p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="Picture/AND-Gate.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+              <h4 class="featurette-heading">Truth table </h4>
+              <p class="lead">I told you,<mark class="grey">Both A and B should have electric</mark>,then the output will be work.</p>
+              <h5 class="featurette-heading">Look at table </h5>
+              <p class="lead">We present 0 and 1 (in Binary),<u>0 mean no input and 1 mean have input.</u></p>
+            </div>
+            <div class="col-md-5 order-md-1">
+              <img class="featurette-image img-fluid mx-auto" src="Picture/ANDtable.png" alt="AND table">
+            </div>
+          </div>
+  
+          <hr class="featurette-divider">
+
+          <div class="row featurette">
+              <div class="col-md-7 order-md-2">
+                <h6 class="featurette-heading">Logic Equations</h6>
+                <p class="lead">For AND gate, out means output(similar Y in first picture).</p>
+                <p class="lead"><mark class="grey"> Y = A.B = A (&) B = A ^ B.</mark></p>
+              </div>
+              <div class="col-md-5 order-md-1">
+                <img class="featurette-image img-fluid mx-auto" src="Picture/ANDe.png" alt="AND Eq">
+              </div>
+            </div>
+    
+           
+  
+
+
+    </div>
+
+    <!-- Intro screen (scene3) -->
+    <div id="scene3" class="main">
+
+        <h1  style="text-align: left"><u>OR gate</u></h1>
+      
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Concept.</h2>
+            <p class="lead">Just remember,<mark class="grey">One of inputs has electric</mark>,Output will work.</p>
+            <h3 class="featurette-heading">Notice.</h3>
+            <p class="lead">In this picture,Or gate has <u>bullet shape.</u></p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="Picture/Orgate.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+              <h4 class="featurette-heading">Truth table </h4>
+              <p class="lead">When we have two input<mark class="grey">One of inputs has electric</mark>,then the output will be work.</p>
+              <h5 class="featurette-heading">Look at table </h5>
+              <p class="lead">We present 0 and 1 (in Binary),<u>0 mean no input and 1 mean have input.</u></p>
+              <p class="lead">For input, A has 2 possible to be 0,1 (similar for B)</p>
+              <p class="lead">We can make possible to them(in AB) like 00,01,10,11.So we use <u>2(^2)</u> to find how many possile for inputs</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+              <img class="featurette-image img-fluid mx-auto" src="Picture/ORtable.png" alt="OR table">
+            </div>
+          </div>
+  
+          <hr class="featurette-divider">
+
+          <div class="row featurette">
+              <div class="col-md-7 order-md-2">
+                <h6 class="featurette-heading">Logic Equations</h6>
+                <p class="lead">For OR gate, out means output(similar Y in first picture).</p>
+                <p class="lead"><mark class="grey"> Y = A+B = A | B = A(v)B.</mark></p>
+              </div>
+              <div class="col-md-5 order-md-1">
+                <img class="featurette-image img-fluid mx-auto" src="Picture/ORe.png" alt="AND Eq">
+              </div>
+            </div>
+    
+           
+  
+
+
+    </div>
+
+    <!-- Intro screen (scene4) -->
+    <div id="scene4" class="main">
+
+        <h1  style="text-align: left"><u>NOT gate</u></h1>
+      
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Concept. </h2>
+            <p class="lead">Have you see,<mark class="grey">One  input has electric,But Output will not work.</mark></p>
+            <h3 class="featurette-heading">Notice.</h3>
+            <p class="lead">In this picture,NOT gate has <u>triangle with small circle shape.</u></p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="Picture/Notgate.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+              <h4 class="featurette-heading">Truth table </h4>
+              <p class="lead">One way<mark class="grey">One of inputs has electric</mark>,then the output will be work.</p>
+              <h5 class="featurette-heading">Look at table ></h5>
+              <p class="lead">We present 0 and 1 (in Binary),<u>0 mean no input and 1 mean have input.</u></p>
+              <p class="lead">For input, A has 2 possible to be 0,1 (similar for B)</p>
+              <p class="lead">We can make possible to them(in AB) like 00,01,10,11.So we use <u>2(^2)</u> to find how many possile for inputs</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+              <img class="featurette-image img-fluid mx-auto" src="Picture/NOTtable.png" alt="NOT table">
+            </div>
+          </div>
+  
+          <hr class="featurette-divider">
+
+          <div class="row featurette">
+              <div class="col-md-7 order-md-2">
+                <h6 class="featurette-heading">Logic Equations</h6>
+                <p class="lead">For NOT gate, out means output(similar Y in first picture).</p>
+                <p class="lead">such as <mark class="grey"> Y = A' (most use)</mark></p>
+              </div>
+              <div class="col-md-5 order-md-1">
+                <img class="featurette-image img-fluid mx-auto" src="Picture/NOTe.png" alt="NOt Eq">
+              </div>
+            </div>
+    
+           
+  
+
+
+    </div>
+       
+
+    <!-- Intro screen (scene5) -->
+    <div id="scene5" class="main">
+
+      <h1  style="text-align: left"><u>NOR gate</u></h1>
+    
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Concept. </h2>
+          <p class="lead">Anything you know from the OR gate,<mark class="grey">The result(output) is opposite from OR gate output. </mark>,</p>
+          <h3 class="featurette-heading">Notice.</h3>
+          <p class="lead">In this picture,Similar OR gate <u>just put a little bit circle.</u></p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="featurette-image img-fluid mx-auto" src="Picture/NORgate.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h4 class="featurette-heading">Truth table </h4>
+            <p class="lead">When we have two input<mark class="grey">Both input are zero </mark>,then the output will be work.</p>
+            <h5 class="featurette-heading">Look at table </h5>
+            <p class="lead">We present 0 and 1 (in Binary),<u>0 mean no input and 1 mean have input.</u></p>
+            <p class="lead">For input, A has 2 possible to be 0,1 (similar for B)</p>
+            <p class="lead">We can make possible to them(in AB) like 00,01,10,11.So we use <u>2(^2)</u> to find how many possile for inputs</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="Picture/NORtable.png" alt="NOR table">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+              <h6 class="featurette-heading">Logic Equations</h6>
+              <p class="lead">For NOR gate, out means output(similar Y in first picture).</p>
+              <p class="lead">Similar OR gate,Justchange a little bit sign.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+              <img class="featurette-image img-fluid mx-auto" src="Picture/NORe.png" alt="NOR Eq">
+            </div>
+          </div>
+  
+         
+
+
+
+  </div>
+
+<!-- Intro screen (scene6) -->
+  <div id="scene6" class="main">
+
+    <h1  style="text-align: left"><u>XOR gate</u></h1>
+  
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Concept. </h2>
+        <p class="lead">When we have same two input,<mark class="grey">.Output will be zero</mark>.</p>
+        <h3 class="featurette-heading">Notice.</h3>
+        <p class="lead">In this picture,Similar OR gate <u>just A and B gateways are difference.</u></p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" src="Picture/XOR.png" alt="XOR image">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h4 class="featurette-heading">Truth table </h4>
+          <p class="lead">When we have two input<mark class="grey">00 and 11 </mark>,then the output will be <u>zero</u>.</p>
+          <h5 class="featurette-heading">Look at table </h5>
+          <p class="lead">We present 0 and 1 (in Binary),<u>0 mean no input and 1 mean have input.</u></p>
+          <p class="lead">For input, A has 2 possible to be 0,1 (similar for B)</p>
+          <p class="lead">We can make possible to them(in AB) like 00,01,10,11.So we use <u>2(^2)</u> to find how many possile for inputs</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="featurette-image img-fluid mx-auto" src="Picture/XOtable.png" alt="NOR table">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h6 class="featurette-heading">Logic Equations</h6>
+            <p class="lead">For XOR gate, out means output(similar Y in first picture).</p>
+            <p class="lead">Similar OR gate,Justchange a little bit sign having circle outside plus.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="Picture/XOe.png" alt="NOR Eq">
+          </div>
+        </div>
+
+       
+
+
+
+  </div>
+  
+  <!-- Intro screen (scene7) -->
+  <div id="scene7" class="main">
+
+    <h1  style="text-align: left"><u>XNOR gate</u></h1>
+  
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Concept. </h2>
+        <p class="lead">If you remember about XOR result,<mark class="grey">.Outputs are opposite from XOR</mark>.</p>
+        <h3 class="featurette-heading">Notice.</h3>
+        <p class="lead">In this picture,Similar XOR gate <u>just A and B gateways are difference (<mark class="grey">having small ring</mark>).</u></p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" src="Picture/XN.png" alt="XNOR image">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h4 class="featurette-heading">Truth table </h4>
+          <p class="lead">When we have two input<mark class="grey">00 and 11 </mark>,then the output will be <u>1</u>.</p>
+          <h5 class="featurette-heading">Look at table </h5>
+          <p class="lead">We present 0 and 1 (in Binary),<u>0 mean no input and 1 mean have input.</u></p>
+          <p class="lead">For input, A has 2 possible to be 0,1 (similar for B)</p>
+          <p class="lead">We can make possible to them(in AB) like 00,01,10,11.So we use <u>2(^2)</u> to find how many possile for inputs</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="featurette-image img-fluid mx-auto" src="Picture/XNt.png" alt="XNOR table">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h6 class="featurette-heading">Logic Equations</h6>
+            <p class="lead">For XOR gate, out means output(similar Y in first picture).</p>
+            <p class="lead">Similar XOR gate,Just change a little bit sign having Upper bar.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="Picture/XNe.png" alt="XNOR Eq">
+          </div>
+        </div>
+
+       
+
+
+
+  </div>
+  
+    
+  <!-- Intro screen (scene8) -->
+   <div id="scene8" class="main">
+
+  <h1  style="text-align: left"><u>NAND gate</u></h1>
+
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading">Concept. </h2>
+      <p class="lead">Any concept of AND gate,<mark class="grey">All input A and B should have electric,then the output will be zero</mark>.</p>
+      <h3 class="featurette-heading">Notice.</h3>
+      <p class="lead">Similar AND gate,<u>Just have a small ring in front output</u></p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="featurette-image img-fluid mx-auto" src="Picture/NANDgate.png" alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h4 class="featurette-heading">Truth table </h4>
+        <p class="lead">Similar AND gate,<mark class="grey">Difference in the output result</mark>.</p>
+        <h5 class="featurette-heading">Look at table </h5>
+        <p class="lead">We present 0 and 1 (in Binary),<u>0 mean no input and 1 mean have input.</u></p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" src="Picture/NANDtable.png" alt="NAND table">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h6 class="featurette-heading">Logic Equations</h6>
+          <p class="lead">For NAND gate, out means output(similar Y in first picture).</p>
+          <p class="lead">Similar AND gate,<mark class="grey">Just have more sign to make difference.</mark></p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="featurette-image img-fluid mx-auto" src="Picture/NANDe.png" alt="NAND Eq">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h6 class="featurette-heading">NAND Gate Converting</h6>
+          <div class="carousel-item active">
+            <img class="ffslide" src="Picture/NANDc.png" alt="allpic">
+          <div class="container">
+        </div>
+          
+          <p class="lead"><mark class="grey">In left side</mark>,showing the normal logic gate.</p>
+          <p class="lead"><mark class="grey">In right side</mark>,showing the NAND gate converting.</p>
+          <p class="lead"><mark class="grey">First of all</mark>,you might use Logic gate Simulator to prove about in this picture. </p>
+          <p class="lead"><mark class="grey">Or you can draw the truth table </mark>between logic gate circuit and NAND gate converting.</p>
+          <p class="lead"><mark class="grey">Finally</mark>,you have to notice about NAND gate picture(in top right).There are two line from A which mean having same input like (11,00). </p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          
+        </div>
+      </div>
+
+
+
+
+</div>
+   </div>
+
+   <!-- Intro screen (scene9) -->
+   <div id="scene9" class="main">
+
+    <h1  style="text-align: left"><u>Laws & Rules of Boolean Algebra</u></h1>
+  
+  
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Concept. </h2>
+        <p class="lead">This is a mathematical technique,<mark class="blue">Make the complex equations to be simple equations</mark>.</p>
+        <h3 class="featurette-heading">In this picture</h3>
+        <p class="lead">We use<u> a little logic gate instead of manny gates</u>which get the same results.</p>
+        <h3 class="featurette-heading">Laws & Rules of Boolean Algebra</h3>
+          <p class="lead">1.The commutative laws</p>
+          <p class="lead">2.The associative laws</p>
+          <p class="lead">3.The distributive laws</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" src="Picture/BA.png" alt="BAeq">
+      </div>
+    </div>
+  
+    <hr class="featurette-divider">
+  
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h4 class="featurette-heading">The commutative laws</h4>
+          <p class="lead"><mark class="blue">A+B = B+A</mark>.</p>
+          <p class="lead"><mark class="blue">AB = BA</mark>.</p>
+          
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="featurette-image img-fluid mx-auto" src="Picture/Com.png" alt="Com table">
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+  
+      <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h6 class="featurette-heading">The associative Laws</h6>
+            <p class="lead"><mark class="blue">A+(B+C) = (A+B)+C</mark>.</p>
+            <p class="lead"><mark class="blue">A(BC) = (AB)C</mark>.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="Picture/Ass.png" alt="Ass Eq">
+          </div>
+        </div>
+  
+        <hr class="featurette-divider">
+  
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h6 class="featurette-heading">The distributive Laws</h6>
+            <p class="lead"><mark class="blue">A(B+C) = AB + AC</mark></p>
+            
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="Picture/Dis.png" alt="Dis Eq">
+          </div>
+        </div>
+  
+        
+  
+        <hr class="featurette-divider">
+  
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h6 class="featurette-heading">Duality (a meta-theorem— a theorem about theorems)</h6>
+            <p class="lead"><mark class="blue">Replace: • with +, + with •, 0 with 1, and 1 with 0</mark></p>
+            
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="Picture/Du.png" alt="Dis Eq">
+          </div>
+        </div>
+  
+        <hr class="featurette-divider">
+  
+  
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h6 class="featurette-heading">Boolean Rules</h6>
+            <p class="lead"><mark class="blue">Remember them</mark>.</p>
+            
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="Picture/Ru.png" alt="Dis Eq">
+          </div>
+        </div>
+          
+            
+          </div>
+
+          
+        
+  
+   
+    <!-- Intro screen (scene10) -->
+   <div id="scene10" class="main">
+
+  <h1  style="text-align: left"><u>De Morgan’s Theorem</u></h1>
+
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading">First rule </h2>
+      <p class="lead">The complement of two or more <mark class="blue">AND variables is equivalent to the OR </mark>of the complements of the individual variables.</p>
+      
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="featurette-image img-fluid mx-auto" src="Picture/FR.png" alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading">Second rule </h2>
+      <p class="lead">The complement of two or more <mark class="blue">OR variables is equivalent to the AND </mark>of the complements of the individual variables.</p>
+      
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="featurette-image img-fluid mx-auto" src="Picture/SR.png" alt="Generic placeholder image">
+    </div>
+  </div>
+
+    
+      </div>
+
+     <!-- Intro screen (scene11) -->
+    <div id="scene11" class="main">
+
+      <h1  style="text-align: left"><u>SOP and POS form</u></h1>
+
+      
+      
+      <div class="row featurette">
+        
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/K2cpJex0o_A" allowfullscreen></iframe>
+        
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+        <div class="container">
+          <h2 class="featurette-heading">This topic is very difficult to understand.</h2>
+          <p class="text-justify">Don't worry,<mark class="red">We have video</mark>help us to describe<mark class="red">step by step</mark>.</p>
+          <h3 class="featurette-heading">Try to look with you lecture note</h3>
+          <p class="text-justify">We use SOP and POS for applying <u>Karnaugh Maps</u>in next lecture.</p>
+        </div>
+      
+      
+        
+      </div>
+
+      
+        
+  
+         
+
+
+
+  
+
+   <!-- Intro screen (scene12) -->
+   <div id="scene12" class="main">
+
+    <h1  style="text-align: left"><u>Two-Variable Map</u></h1>
+
+    
+    
+    <div class="row featurette">
+      
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Rzz7V_X7aGM" allowfullscreen></iframe>
+      
+      </div>
+
+    </div>
+
+    <hr class="featurette-divider">
+    
+      <div class="container">
+        <h2 class="featurette-heading">After we learn SOP and POS.</h2>
+        <p class="text-justify">We have to make<mark class="red">Boolean simple formular</mark>using K map.</p>
+        <h2 class="featurette-heading">In this video.</h2>
+        <p class="text-justify">You don't have focus on<mark class="red">COST</mark>.Just looking the process of creating K map.</p>
+        <h3 class="featurette-heading">TIP</h3>
+        <p class="text-justify">If you think it is difficult, <u>do many exercise we give or find another video</u> help you understand more than you learn in lecture room.</p>
+      </div>
+      <hr class="featurette-divider">
+      
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h6 class="featurette-heading">We can do two form</h6>
+          <p class="lead">But the most form we like to create is<mark class="red">First form(Left side)</mark>.</p>
+          
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="featurette-image img-fluid mx-auto" src="Picture/Two.png" alt="Two Var">
+        </div>
+      </div>
+    
+      
+    </div>
+
+    <!-- Intro screen (scene13) -->
+   <div id="scene13" class="main">
+
+    <h1  style="text-align: left"><u>Three-Variable Map</u></h1>
+
+    
+    
+    <div class="row featurette">
+      
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3vkMgTmieZI" allowfullscreen></iframe>
+      
+      </div>
+
+    </div>
+
+    <hr class="featurette-divider">
+    
+      <div class="container">
+        <h2 class="featurette-heading">Similar Two-Variable Map</h2>
+        <p class="text-justify">We have to make<mark class="red">Boolean simple formular</mark>using K map.<mark class="red">But it is more complicated function</mark>.</p>
+        <h2 class="featurette-heading">In this video.</h2>
+        <p class="text-justify">The presentation in three K map start at <mark class="red">5.54</mark>.In video,Also we represent Two-Variable K map too(You can watch it if you have time).</p>
+        <h3 class="featurette-heading">TIP</h3>
+        <p class="text-justify">This topic is the most difficult, Remember <u>do many exercise we give or find another video</u> help you understand more than you learn in lecture room.</p>
+      </div>
+      <hr class="featurette-divider">
+      
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h6 class="featurette-heading">This is the original K map for 3 input</h6>
+          <p class="lead">Caution<mark class="red">Please watch video</mark> to make you understand and use easily this K map for exercise.</p>
+          
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="featurette-image img-fluid mx-auto" src="Picture/Three.png" alt="Three Var">
+        </div>
+      </div>
+    
+      
+    </div>
+
+    
+      
+
+       
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>

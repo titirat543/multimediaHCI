@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang = "en" >
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="sidebar.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<title>Contact Us</title>
+
+<script src="jquery.js"></script>
+<script>
+function clickBtn( btn )
+{
+  var bname = "#scene" + btn;
+  $("[id^='scene']").hide();
+  $(bname).show();
+  
+  $("a.link").click(function(){
+      $("a.link").css("background-color", "grey"); /* Return the same colour when we click another tab */
+      
+      $(this).css("background-color", "orange");
+  });
+  
+  
+}
+
+$(document).ready(function(){
+  clickBtn('0');
+});
+</script>
+
+
+</head>
+<body>
+  <!-- Navigation bar -->
+    <header>
+  
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        
+          <a class="nav-link disabled" href="#" >Logic Gate</a> 
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="Homepage.html">Home </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="Tutorial.html">Tutorial </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link " href="Exercise.html">Exercise&Solution </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Simulator.html">Simulator</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="Help.html">Contact Us<span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+            
+          </div>
+        </nav>
+    </header>
+
+      <div class="sidenav">
+        <a class = "active" href="#about" onclick="clickBtn('0')">Help</a>
+        
+       
+        
+       
+      </div>
+
+
+        <!-- Form -->
+        <div id="scene0" class="main">
+            <h1>Help</h1>
+            <p>If you have problem or give some feedbacks</p>
+            <h2>Send e-mail to tis00024@students.stir.ac.uk:</h2>
+            
+            <form action="mailto:tis00024@students.stir.ac.uk" method="post" enctype="text/plain">
+            Name:<br>
+            <input type="text" name="name"><br>
+            E-mail:<br>
+            <input type="text" name="mail"><br>
+            <label>Comments
+              <br>
+              <textarea name="comments" maxlength="500"></textarea>
+              </label>
+              <br>
+            <input type="submit" value="Send">
+             <input type="reset" value="Reset">
+            </form>
+         
+        </div>
+
+        
+    
+        
+        
+       
+        
+      
+      
+</body>
+
+
+</html>

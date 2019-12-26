@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="sidebar.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<title>My Bootstrap MM Examples</title>
+
+<script src="jquery.js"></script>
+<script>
+function clickBtn( btn )
+{
+  var bname = "#scene" + btn;
+  $("[id^='scene']").hide();
+  $(bname).show();
+  
+  $("a.link").click(function(){
+      $("a.link").css("background-color", "grey"); /* Return the same colour when we click another tab */
+      
+      $(this).css("background-color", "orange");
+  });
+  
+  
+  
+}
+
+$(document).ready(function(){
+  clickBtn('0');
+});
+</script>
+
+
+</head>
+<body>
+    <header>
+      <!-- Navigation bar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+       
+          <a class="nav-link disabled" href="#" >Logic Gate</a> 
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="Homepage.html">Home </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="Tutorial.html">Tutorial </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link " href="Exercise.html">Exercise&Solution  <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Simulator.html">Simulator</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Help.html">Contact Us</a>
+              </li>
+            </ul>
+            
+          </div>
+        </nav>
+      </header>
+
+      <div class="sidenav">
+        <a class = "active" href="#about" onclick="clickBtn('0')">Introduction</a>
+        <a href="#Be" onclick="clickBtn('1')" class="link">Beginner exercise/solution</a>
+        
+        <a href="#Bs" onclick="clickBtn('2')" class="link">Intermidiate exercise/solution</a>
+        <a href="#Ie"  onclick="clickBtn('3')" class="link">Upper-Intermidiate exercise/solution</a>
+       
+        
+       
+        </div>
+
+
+        <!-- Intro screen (scene0) -->
+        <div id="scene0" class="main">
+        <h1  style="text-align: center"><u>Introduction</u></h1>
+        <p class="medium" style="text-align: center">
+        To make more confident,We have excercises to help you more understand.
+        </p>
+        <h1 style="text-align: center"><u>We have 3 part of Exercise </u></h1>
+        <p>For<mark class="grey">Beginner</mark>,we have exercise with solution</p>
+        
+        <p>For<mark class="blue">Intermidiate</mark>,it might more difficult,but you can do it.</p>
+    
+        <p>For<mark class="red">Upper-Intermidiate</mark>take time to learn,you can solve it.</p>
+    
+        
+        </div>
+        <!-- Intro screen (scene1) -->
+      <div id="scene1" class="main">
+        <h1  ><u>Beginner exercise/solution</u></h1>
+        
+       
+        
+        <p >For<mark class="blue">Blue</mark>button,this is an exercise.</p>
+    
+        <p >For<mark class="grey">Grey</mark>button,this is a solution.</p>
+        
+        
+        <a href="https://drive.google.com/file/d/1ifcPK1Dy0FMKFYUqekQuCM8sp9vdVF1I/view?usp=sharing" class="btn btn-primary btn-lg">Exercise(PDF file).</a>
+        
+        <a href="https://drive.google.com/file/d/1rMlu4GNjGeiJVk8_WXQtNshOtOB-_Rpz/view?usp=sharing" class="btn btn-secondary btn-lg">Solution(PDF file).</a>
+        <h2>Don't look the soltuion while doing exercise,Please make sure <u>you exercise must finish before</u></h2>
+
+        <hr class="featurette-divider">
+        <h1 ><u>Video for Solution</u></h1>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="Picture/Part1.mp4" allowfullscreen></iframe>
+          
+          </div>
+    
+
+      </div>
+      <!-- Intro screen (scene2) -->
+      <div id="scene2" class="main">
+        <h1  ><u>Intermidiate exercise/solution</u></h1>
+        
+       
+        
+        <p >For<mark class="blue">Blue</mark>button,this is an exercise.</p>
+    
+        <p >For<mark class="grey">Grey</mark>button,this is a solution.</p>
+        
+        <a href="https://drive.google.com/file/d/1HSpshZ7wWbJSnCHw0P2otQ5lNpqILhLt/view?usp=sharing" class="btn btn-primary btn-lg">Exercise(PDF file).</a>
+        
+        <a href="https://drive.google.com/file/d/1JbqwbvA_EOcv5O7pS3PbjBnoC80EeHB7/view?usp=sharing" class="btn btn-secondary btn-lg">Solution(PDF file).</a>
+        <h2>Don't look the soltuion while doing exercise,Please make sure <u>you exercise must finish before</u></h2>
+
+        <hr class="featurette-divider">
+        <h1 ><u>Video for Solution</u></h1>
+        
+        <p>Part One</p>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="Picture/Parttwoone.mp4" allowfullscreen></iframe>
+          
+          </div>
+          <p>Part two</p>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="Picture/Parttwotwo.mp4" allowfullscreen></iframe>
+          
+          </div>
+
+          <p>Part Three</p>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="Picture/Parttwothree.mp4" allowfullscreen></iframe>
+          
+          </div>
+      </div>
+
+      <!-- Intro screen (scene3) -->
+      <div id="scene3" class="main">
+        <h1  ><u>Upper-Intermidiate exercise/solution</u></h1>
+        
+       
+        
+        <p >For<mark class="blue">Blue</mark>button,this is an exercise.</p>
+    
+        <p >For<mark class="grey">Grey</mark>button,this is a solution.</p>
+        
+        <a href ="https://drive.google.com/file/d/1-2isO6qeGuJaI9aWSzcETLHH-FJfyxGX/view?usp=sharing" class="btn btn-primary btn-lg">Exercise(PDF file).</a>
+        
+        <a href="https://drive.google.com/file/d/1gT_p4ncau7KlGP1HFzU-0b2MP9pJBoaO/view?usp=sharing" class="btn btn-secondary btn-lg">Solution(PDF file).</a>
+        <h2>Don't look the soltuion while doing exercise,Please make sure <u>you exercise must finish before</u></h2>
+
+        <hr class="featurette-divider">
+        <h1 ><u>Video for Solution</u></h1>
+        <p>PartOne</p>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="Picture/Partthree.mp4" allowfullscreen></iframe>
+          
+          </div>
+
+      </div>
+      
+</body>
+
+
+</html>

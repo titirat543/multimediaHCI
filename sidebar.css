@@ -1,0 +1,164 @@
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+
+
+div.content { position: absolute; top: 10px; left: 135px;
+	width: 490px; height: 380px;
+	background-color: Azure; padding: 5px; }
+
+  .sidenav a.active {
+  font-size: 18px;
+  background-color: #f1f1f1;
+  color: black;
+  cursor: default;
+  display: block;
+
+}
+
+div.col-lg-4 {
+
+  margin-left: 3pt;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: bold;
+  font-size: 36px;
+  
+  
+  
+  line-height: 1;
+  letter-spacing: -.05rem;
+
+}
+
+h1.intro{
+  text-align: center;
+  margin-left: 2rem;
+}
+
+h2{
+
+   font-size: 36px;
+   margin-top: 2rem;
+
+
+}
+
+
+hr{
+  width: 100%;
+}
+
+mark.grey {
+  
+
+  background-color: grey;
+  margin-left: 1rem;
+  
+}
+
+mark.blue {
+  
+
+  background-color: rgba(0,0,255,.25);
+  margin-left: 1rem;
+  
+}
+
+mark.red {
+  
+
+  background-color:  rgba(255,0,0,.25);
+  margin-left: 1rem;
+  
+}
+
+
+.sidenav {
+  
+  height: 100%;
+  width: 160px;
+  position:absolute;
+  z-index: 1;
+  top: 2rem;
+  bottom:0;
+  left: 0;
+  background-color: gray;
+  overflow-x: hidden;
+  padding-top: 20px;
+  overflow-y:scroll;
+}
+
+.embed-responsive-item{
+
+  margin-bottom: 2rem;
+
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover:not(.active)  {
+  background-color:orange;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+th, td {
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  padding: 8px;
+  
+}
+
+td{
+  cursor: pointer;
+}
+
+textarea{
+  width: 200%;
+  height: 100%;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  cursor: default;
+}
+
+.grey {
+  background-color: rgba(128,128,128,.25);
+}
+.red {
+  background-color: rgba(255,0,0,.25);
+}
+.blue {
+  background-color: rgba(0,0,255,.25);
+}
+.main {
+  
+  position: relative;
+  top: 5rem;
+  margin-left: 170px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
